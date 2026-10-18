@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mail-agent — Über die App, Datenschutz und Nutzungsbedingungen</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .lead { opacity: .75; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  code { font-size: .9em; }
+  footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+</style>
+</head>
+<body>
+
+<h1>mail-agent</h1>
+<p class="lead">Ein privates Werkzeug zum Aufräumen des eigenen
+Gmail-Postfachs. Kein Dienst, kein Produkt, keine Nutzer außer dem Betreiber
+selbst.</p>
+
+<h2>Was die Anwendung tut</h2>
+<p>Die Anwendung liest Metadaten der E-Mails eines einzigen Postfachs — des
+Postfachs der Person, die sie betreibt — und erstellt daraus eine Übersicht:
+welche Absender wie viel Speicherplatz belegen, welche Newsletter ungelesen
+bleiben, welche Nachrichten alt und groß sind. Auf dieser Grundlage schlägt
+sie vor, einzelne Nachrichten in den Papierkorb zu verschieben.</p>
+
+<h2>Welche Daten verarbeitet werden</h2>
+<ul>
+  <li>Absender, Empfänger, Betreff, Datum, Labels und Größe einer Nachricht.</li>
+  <li><strong>Keine Nachrichtentexte.</strong> Die Gmail-API wird mit
+      <code>format=metadata</code> abgefragt; Inhalte werden nicht
+      heruntergeladen und nicht gespeichert.</li>
+  <li>Keine Anhänge, keine Kontakte, keine Kalenderdaten.</li>
+</ul>
+
+<h2>Wo die Daten bleiben</h2>
+<p>Die Metadaten liegen ausschließlich lokal, in einer Datei auf einem Gerät
+im Haushalt des Betreibers. Es gibt keinen Server, keine Cloud und keine
+Übertragung an Dritte. Die Daten werden nicht verkauft, nicht ausgewertet und
+nicht für Werbung verwendet. Es findet kein Training von KI-Modellen mit
+diesen Daten statt.</p>
+
+<h2>Zugriffsrechte</h2>
+<p>Die Anwendung verwendet den Bereich
+<code>https://www.googleapis.com/auth/gmail.readonly</code>, also reinen
+Lesezugriff. Zum Verschieben in den Papierkorb wird zu einem späteren
+Zeitpunkt zusätzlich <code>gmail.modify</code> angefragt — getrennt und mit
+erneuter ausdrücklicher Zustimmung. Nachrichten werden niemals endgültig
+gelöscht, sondern nur in den Papierkorb verschoben, den Google dreißig Tage
+aufbewahrt.</p>
+
+<h2>Limited Use</h2>
+<p>Die Verwendung von Informationen aus Google-APIs durch diese Anwendung
+entspricht der
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google
+API Services User Data Policy</a> einschließlich der Limited-Use-Anforderungen.</p>
+
+<h2>Zustimmung widerrufen</h2>
+<p>Der Zugriff lässt sich jederzeit unter
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>
+entziehen. Danach kann die Anwendung keine Daten mehr abrufen.</p>
+
+<h2>Nutzungsbedingungen</h2>
+<p>Die Anwendung wird privat betrieben, ohne Gewähr und ohne Haftung. Es
+besteht kein Anspruch auf Verfügbarkeit oder Richtigkeit. Sie steht Dritten
+nicht zur Nutzung offen.</p>
+
+<h2>Kontakt</h2>
+<p>Fragen zu dieser Anwendung: <span id="kontakt">ewgenijzuev@gmail.com</span></p>
+
+<footer>Stand: Oktober 2026</footer>
+
+</body>
+</html>
